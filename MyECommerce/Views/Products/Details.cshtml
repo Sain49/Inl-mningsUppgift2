@@ -1,0 +1,27 @@
+﻿@model MyECommerce.Models.Product
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product Details</h2>
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price (Kr)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Description</td>
+        <td>@Model.Price</td>
+    </tr>
+    </tbody>
+
+</table>

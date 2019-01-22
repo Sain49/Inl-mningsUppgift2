@@ -1,0 +1,28 @@
+﻿@using System.Web.UI.HtmlControls
+@model List<MyECommerce.Models.ProductCategory>
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products Categories</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Categories</th>
+    </tr>        
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(category.Name, "Edit", "ProductCategorys", new { id = category.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<ul>
+    
+</ul>

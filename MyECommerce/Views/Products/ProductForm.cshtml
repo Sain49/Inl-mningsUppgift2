@@ -1,0 +1,30 @@
+﻿@model MyECommerce.ViewModels.ProductFormViewModel
+
+@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Product</h2>
+
+@using (Html.BeginForm("Save", "Products"))
+{
+    <div class="form-group">
+        @Html.LabelFor(p => p.Product.Name)
+        @Html.TextBoxFor(p => p.Product.Name, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Product.Description)
+        @Html.TextBoxFor(p => p.Product.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Product.Price)
+        @Html.TextBoxFor(p => p.Product.Price, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Product.Category_Id)
+        @Html.DropDownListFor(p => p.Product.Category_Id, new SelectList(Model.ProductCategories, "Id", "Name"), "Select Category", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(p => p.Product.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
